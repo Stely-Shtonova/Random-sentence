@@ -1,4 +1,7 @@
 # Random-Sentence Program
+*********************
+This program is just for fun!
+
 This is a program that randomly generates sentences. The computer automaticaly chooses:
 
 - name
