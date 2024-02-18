@@ -1,12 +1,13 @@
 import random
 
+# creating the lists the computer will choose from
 names = ['Johny', 'Arnold', 'Emma', 'Robert', 'Daniel', 'Chris', 'Leonardo', 'Tom', 'Charles', 'Cameron',
          'Kate', 'Natalie', 'Angelina', 'Scarlet', 'Adam', 'Anne', 'Ben', 'Owen', 'Sandra', 'Jennifer', 'Taylor']
 cities = ['New York', 'Amsterdam', 'London', 'Chicago', 'Tokyo', 'Berlin', 'Paris', 'Barcelona', 'Dubai', 'Istanbul',
           'Los Angeles', 'Rome', 'Singapore', 'Prague', 'Madrid', 'Las Vegas', 'Sydney', 'San Francisco', 'Brazil']
 verbs = ['swim in', 'walk on', 'eat', 'sleep on', 'dance with', 'write', 'listen to', 'jump off', 'dream of', 'take',
-         'install', 'learn about', 'build', 'fit', 'understand', 'pack', 'train', 'keep', 'paint', 'cook', 'slide', 'buy',
-         'share']
+         'install', 'learn about', 'build', 'fit', 'understand', 'pack', 'train', 'keep', 'paint', 'cook', 'slide',
+         'buy', 'share']
 nouns = ['information', 'phone', 'sock', 'bed', 'banana', 'headphones', 'cat', 'picture', 'heart', 'magazine', 'steak',
          'agency', 'food', 'shirt', 'drama', 'relation', 'world', 'profession', 'grandmother', 'child', 'hat', 'desk']
 adjectives = ['civil', 'beautiful', 'large', 'red', 'colorful', 'united', 'soft', 'golden', 'delicious', 'bald',
@@ -23,6 +24,7 @@ places = ['downstairs', 'outside', 'on the beach', 'in the bookstore', 'on the b
 def random_sentence():
     print('Your first sentence/s is/are:\n--------------')
     while True:
+        # letting the computer choose the count of iterations and the count of the subjects
         sentences_count = random.choice(range(1, 5))
         subject_count = random.randint(1, 2)
         for current_sentence in range(sentences_count):
@@ -34,6 +36,7 @@ def random_sentence():
             adjective = random.choice(adjectives)
             adverb = random.choice(adverbs)
             place = random.choice(places)
+            # checking if the subject is only one -> checks/fixes grammar
             if subject_count == 1:
                 verb_list = verb.split()
                 if len(verb_list) == 2:
@@ -43,6 +46,7 @@ def random_sentence():
                     print(f"{name1} from {city} {adverb} {verb}s {'the ' +adjective} {noun} {place}!")
             else:
                 print(f"{name1} and {name2} from {city} {adverb} {verb} {'the ' +adjective} {noun} {place}!")
+        # asking the user for directions
         answer = input("Click [Enter] for more or [S] to stop the program: ")
         if answer.lower() == 's':
             break
